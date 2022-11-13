@@ -64,7 +64,7 @@ public class aplikasibansos {
                 {
                     inputdatakeArray(minyakgoreng,namapendaftar);
                     System.out.println("Selamat Anda mendapat Minyak Goreng");
-                    System.out.println(minyakgoreng[0]);
+                    tampilkansemuadatabansos();
                 }
                 case 2 ->
 
@@ -72,7 +72,7 @@ public class aplikasibansos {
                 {
                     inputdatakeArray(gula,namapendaftar);
                     System.out.println("Selamat Anda mendapatkan Gula");
-                    System.out.println(gula[0]);
+                    tampilkansemuadatabansos();
 
                 }
                 case 3 ->
@@ -81,7 +81,7 @@ public class aplikasibansos {
                 {
                     inputdatakeArray(miegoreng,namapendaftar);
                     System.out.println("Selamat anda mendapatkan Mie Goreng ");
-                    System.out.println(miegoreng[0]);
+                    tampilkansemuadatabansos();
 
                 }
                 case 4 ->
@@ -89,7 +89,7 @@ public class aplikasibansos {
                 {
                     inputdatakeArray(tehhijau,namapendaftar);
                     System.out.println("Selamat anda mendapatkan Teh Hijau");
-                    System.out.println(tehhijau[0]);
+                    tampilkansemuadatabansos();
                 }
             }
     }
