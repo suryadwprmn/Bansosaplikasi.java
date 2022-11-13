@@ -7,24 +7,25 @@ public class aplikasibansos {
 
 
 
-        public static int penerimabantuan = 100;
-        public static String[] minyakgoreng = new String[20];
-        public static String[] gula = new String[30];
-        public static String[] miegoreng = new String[35];
-        public static String[] tehhijau = new String[15];
+        public static int penerimabantuan = 100; // Penerima bantuan 100 orang
+        public static String[] minyakgoreng = new String[20]; // Penerima minyak goreng ada 20
+        public static String[] gula = new String[30]; // Penerima gula ada 30
+        public static String[] miegoreng = new String[35]; // Penerima mie goreng ada 35
+        public static String[] tehhijau = new String[15]; // Penerima teh hijau ada 15
 
         public static Scanner inputuser = new Scanner(System.in);
 
         public static String output (String index){
+            //outputan akan keluar jika sudah mengisi nama pendaftar,umur, dan alamat
         System.out.print(index + " : ");
         return inputuser.nextLine();
 
     }
 
-        public static void tesInput () {
-        String input = output("Masukkan Nama");
-        System.out.println("Nama anda Adalah " + input);
-    }
+//        public static void tesInput () {
+//        String input = output("Masukkan Nama");
+//        System.out.println("Nama anda Adalah " + input);
+//    }
         public static void pendaftarbansos () {
             while (true) {
                 System.out.println(" ======== Aplikasi Penerima Bansos ========= ");
@@ -43,11 +44,11 @@ public class aplikasibansos {
                 else {
                     System.out.println();
                     System.out.println("Nama anda Adalah " + namapendaftar);
-                    System.out.println(" Umur anda adalah " + umur);
+                    System.out.println("Umur anda adalah " + umur);
                     System.out.println("Alamat Anda " +alamat);
 
                     Random randomnumber = new Random();
-                    int switchStatement = randomnumber.nextInt(4+1);
+                    int switchStatement = randomnumber.nextInt(4);
                     tampilanDatabansos(switchStatement,namapendaftar);
 
 
@@ -98,42 +99,41 @@ public class aplikasibansos {
                 namaArray [i]= indexnama;
                 break;
 
-
             }
     }
     public static void tampilkansemuadatabansos(){
             int sisaKuotabansos = 0;
-                int minyakgorengdata = 0;
+                int minyakGorengdata = 0;
                 for (int i = 0 ; i < minyakgoreng.length ; i++){
                     if (minyakgoreng [i] != null){
-                        minyakgorengdata++;
+                        minyakGorengdata++;
                     }
                 }
-                int miegorengdata = 0;
+                int mieGorengdata = 0;
                 for (int i = 0 ; i < miegoreng.length;i++){
                     if ( miegoreng[i] != null){
-                        miegorengdata++;
+                        mieGorengdata++;
                     }
 
                 }
-                int guladata = 0;
+                int gulaPasirdata = 0;
                 for (int i = 0; i <gula.length;i++){
                     if (gula[i] != null){
-                        guladata++;
+                        gulaPasirdata++;
                     }
                 }
-                int tehhijaudata = 0;
+                int tehHijaudata = 0;
                 for (int i= 0 ; i < tehhijau.length; i++){
                     if (tehhijau[i] != null) {
-                        tehhijaudata++;
+                        tehHijaudata++;
                     }
                 }
-
-                sisaKuotabansos = penerimabantuan - miegorengdata - guladata - minyakgorengdata-tehhijaudata;
-        System.out.println("\n Sisa kuota Minyak Goreng adalah " + miegorengdata);
-        System.out.println("Sisa kuota Gula Pasir adalah" + guladata);
-        System.out.println("Sisa Kuota Mie Goreng adalah" + miegorengdata);
-        System.out.println("Sisa Kuota Teh HIjau adalah " +tehhijaudata );
+                // Mengeksekusi Semua Data dan mengurangi data penerima
+                sisaKuotabansos = penerimabantuan - mieGorengdata - gulaPasirdata - minyakGorengdata - tehHijaudata;
+        System.out.println("\n Sisa kuota Minyak Goreng adalah " + minyakGorengdata);
+        System.out.println("Sisa kuota Gula Pasir adalah" + gulaPasirdata);
+        System.out.println("Sisa Kuota Mie Goreng adalah" + mieGorengdata);
+        System.out.println("Sisa Kuota Teh HIjau adalah " +tehHijaudata );
         System.out.println("Total Penerima Kuota adalah " + penerimabantuan + "dan Sisa kuota " +sisaKuotabansos);
 
     }
